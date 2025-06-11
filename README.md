@@ -7,6 +7,7 @@ A modern commodities management system built with Next.js, Tailwind CSS, and sha
 - 🔐 Authentication with role-based access control
 - 📊 Dashboard for managers with key metrics
 - 📦 Product management with CRUD operations
+- 🖼️ Local product images (stored in `public/images`)
 - 🌓 Light/Dark mode support
 - 🎨 Modern UI with shadcn/ui components
 - 📱 Responsive design
@@ -58,16 +59,22 @@ For testing purposes, use the following credentials:
 src/
 ├── app/                    # Next.js app directory
 │   ├── dashboard/         # Dashboard page
-│   ├── products/         # Products page
-│   ├── globals.css       # Global styles
-│   ├── layout.tsx        # Root layout
-│   └── page.tsx          # Login page
+│   ├── products/          # Products page (card & table views, product images)
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Login page
 ├── components/            # React components
-│   ├── ui/               # shadcn/ui components
+│   ├── add-product-dialog.tsx   # Dialog for adding products
+│   ├── edit-product-dialog.tsx  # Dialog for editing products
+│   ├── navbar.tsx               # Navigation bar
 │   ├── theme-provider.tsx
-│   └── theme-toggle.tsx
-└── lib/                  # Utility functions
-    └── utils.ts
+│   ├── theme-toggle.tsx
+│   └── ui/                # shadcn/ui components (button, card, dialog, input, label, table, dropdown-menu)
+├── lib/                   # Utility functions
+│   └── utils.ts
+├── assets/                # Static assets (e.g., react.svg)
+└── public/
+    └── images/            # Local product images (gold.jpg, silver.jpg, oil.jpg, gas.jpg, copper.jpg)
 ```
 
 ## Technologies Used
@@ -77,6 +84,17 @@ src/
 - [shadcn/ui](https://ui.shadcn.com/) - UI component library
 - [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components
 - [Lucide Icons](https://lucide.dev/) - Beautiful icons
+
+## Local Product Images
+
+Product images are stored in the `public/images` directory. Example files:
+- `public/images/gold.jpg`
+- `public/images/silver.jpg`
+- `public/images/oil.jpg`
+- `public/images/gas.jpg`
+- `public/images/copper.jpg`
+
+To add more images, simply place them in the `public/images` folder and reference them in your product data as `/images/your-image.jpg`.
 
 ## License
 
